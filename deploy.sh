@@ -23,7 +23,7 @@ gcloud run deploy "${SERVICE_NAME}" \
   --platform managed \
   --allow-unauthenticated \
   --set-env-vars "NODE_ENV=production" \
-  --set-secrets "GOOGLE_CLIENT_ID=google-client-id:latest,GOOGLE_CLIENT_SECRET=google-client-secret:latest,LINE_CHANNEL_ACCESS_TOKEN=line-channel-access-token:latest,LINE_CHANNEL_SECRET=line-channel-secret:latest,TOKEN_ENCRYPTION_KEY=token-encryption-key:latest,SCHEDULER_SECRET=scheduler-secret:latest" \
+  --set-secrets "GOOGLE_CLIENT_ID=google-client-id:latest,LINE_CHANNEL_ACCESS_TOKEN=line-channel-access-token:latest,LINE_CHANNEL_SECRET=line-channel-secret:latest,TOKEN_ENCRYPTION_KEY=token-encryption-key:latest,SCHEDULER_SECRET=scheduler-secret:latest" \
   --project "${PROJECT_ID}"
 
 # Get service URL

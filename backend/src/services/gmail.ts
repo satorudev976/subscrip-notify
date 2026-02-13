@@ -5,11 +5,10 @@ import type { GmailMessageSummary } from "../types";
 
 export function getOAuth2Client(): OAuth2Client {
   const clientId = process.env.GOOGLE_CLIENT_ID;
-  const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
-  if (!clientId || !clientSecret) {
-    throw new Error("GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET not set");
+  if (!clientId) {
+    throw new Error("GOOGLE_CLIENT_ID is not set");
   }
-  return new google.auth.OAuth2(clientId, clientSecret);
+  return new google.auth.OAuth2(clientId);
 }
 
 export async function exchangeCodeForTokens(

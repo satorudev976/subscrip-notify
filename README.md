@@ -134,7 +134,7 @@ gcloud firestore databases create --location=asia-northeast1
 1. GCP Console → API とサービス → 認証情報 → OAuth 2.0 クライアント ID を作成
 2. アプリケーションの種類: **iOS** (Bundle ID: `com.jp.pripri.mihari`)
 3. スコープ: `https://www.googleapis.com/auth/gmail.readonly`
-4. `GOOGLE_CLIENT_ID` と `GOOGLE_CLIENT_SECRET` をメモ
+4. `GOOGLE_CLIENT_ID` をメモ (iOS クライアントのため client secret は不要)
 
 #### LINE 公式アカウント設定
 
@@ -151,7 +151,6 @@ TOKEN_KEY=$(node -e "console.log(require('crypto').randomBytes(32).toString('bas
 
 # 各シークレットを登録
 echo -n "YOUR_GOOGLE_CLIENT_ID" | gcloud secrets create google-client-id --data-file=-
-echo -n "YOUR_GOOGLE_CLIENT_SECRET" | gcloud secrets create google-client-secret --data-file=-
 echo -n "YOUR_LINE_CHANNEL_ACCESS_TOKEN" | gcloud secrets create line-channel-access-token --data-file=-
 echo -n "YOUR_LINE_CHANNEL_SECRET" | gcloud secrets create line-channel-secret --data-file=-
 echo -n "$TOKEN_KEY" | gcloud secrets create token-encryption-key --data-file=-
