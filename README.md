@@ -179,7 +179,10 @@ export GCP_REGION=asia-northeast1  # 任意
 
 デプロイ後の出力に表示される Service URL を以下に設定:
 - **LINE Developers** → Messaging API → Webhook URL: `https://YOUR_URL/line/webhook`
-- **GCP Console** → OAuth 認証情報 → リダイレクト URI
+
+> **Note:** OAuth のリダイレクト URI を GCP Console に登録する必要はありません。
+> iOS OAuth クライアントは Bundle ID (`com.jp.pripri.mihari`) と紐づいており、
+> Google からのリダイレクトはアプリのカスタムスキーム (`mihari://`) で直接アプリに戻ります。
 
 ### 6. フロントエンド (iOS アプリ)
 
