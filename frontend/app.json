@@ -15,7 +15,8 @@
         "CFBundleURLTypes": [
           {
             "CFBundleURLSchemes": [
-              "mihari"
+              "mihari",
+              "com.googleusercontent.apps.114522636777-95vpne3ciih5o44l59ued6ebso9qelno"
             ]
           }
         ]

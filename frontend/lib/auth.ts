@@ -4,13 +4,17 @@ import * as SecureStore from "expo-secure-store";
 
 const GOOGLE_CLIENT_ID = process.env.EXPO_PUBLIC_GOOGLE_CLIENT_ID ?? "";
 
+// iOS OAuth requires the reversed client ID as URL scheme
+// e.g. "XXX.apps.googleusercontent.com" -> "com.googleusercontent.apps.XXX"
+const REVERSED_CLIENT_ID = GOOGLE_CLIENT_ID.split(".").reverse().join(".");
+
 const discovery = {
   authorizationEndpoint: "https://accounts.google.com/o/oauth2/v2/auth",
   tokenEndpoint: "https://oauth2.googleapis.com/token",
 };
 
 export function useGoogleAuth() {
-  const redirectUri = AuthSession.makeRedirectUri({ scheme: "mihari" });
+  const redirectUri = AuthSession.makeRedirectUri({ scheme: REVERSED_CLIENT_ID });
 
   const [request, response, promptAsync] = AuthSession.useAuthRequest(
     {
