@@ -193,6 +193,7 @@ npm install
 # 環境変数を設定
 export EXPO_PUBLIC_API_URL=https://YOUR_CLOUD_RUN_URL
 export EXPO_PUBLIC_GOOGLE_CLIENT_ID=YOUR_GOOGLE_CLIENT_ID
+export EXPO_PUBLIC_LINE_OA_URL=https://line.me/R/ti/p/@YOUR_LINE_OA_ID
 
 npx expo start --ios
 ```

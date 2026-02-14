@@ -11,8 +11,7 @@ import {
 import { getOrCreateUid } from "@/lib/auth";
 import { startLineLink } from "@/lib/api";
 
-// Replace with your LINE Official Account URL
-const LINE_OA_URL = "https://line.me/R/ti/p/@YOUR_LINE_OA_ID";
+const LINE_OA_URL = process.env.EXPO_PUBLIC_LINE_OA_URL ?? "";
 
 export default function LinkLineScreen() {
   const [code, setCode] = useState<string | null>(null);
