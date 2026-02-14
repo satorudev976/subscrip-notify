@@ -15,6 +15,7 @@ export function useGoogleAuth() {
   const [request, response, promptAsync] = AuthSession.useAuthRequest(
     {
       clientId: GOOGLE_CLIENT_ID,
+      redirectUri,
       scopes: ["https://www.googleapis.com/auth/gmail.readonly"],
       responseType: AuthSession.ResponseType.Code,
       usePKCE: true,
